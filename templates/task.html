@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>lets walk</title>
+    <script src="/static/update.js"></script>
+    <link href="static/store.css" rel="stylesheet">
+</head>
+<body>
+    <h1>Step Tracker</h1>
+    
+    <h3>Add new super record:</h3>
+    <form id="recordForm">
+        <div>
+            <label for="date">Date:</label>
+            <input type="date" id="date" required>
+        </div>
+        <div>
+            <label for="steps">Steps:</label>
+            <input type="number" id="steps" min="1" required>
+        </div>
+        <button type="button" onclick="addRecord()">Add Super Record</button>
+    </form>
+    
+    <button onclick="clearAll()" style="margin-top: 20px; background-color: #e67777;">Clear All Records</button>
+    
+    <h3>Your records:</h3>
+    <ul id="recordsList">
+        {% for record in records_list %}
+        <li>
+            <div>{{ record.date }} - {{ record.steps }} steps</div>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
