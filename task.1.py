@@ -2,7 +2,7 @@ from flask import Flask, render_template, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from datetime import datetime
 
-app = Flask("lets gooo")  # Using __name__ is more conventional
+app = Flask("lets walk")  # Using __name__ is more conventional
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///steps.db'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False  # To suppress warning
 db = SQLAlchemy(app)
